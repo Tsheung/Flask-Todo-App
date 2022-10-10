@@ -18,8 +18,17 @@
 
     {% for todo in list_to %}
         <p>{{ todo.id }} | {{ todo.title }}</p>
-    {% endfor %}
+    
+        {% if todo.complete == False %}
+            <span>Not Complete</span>
+        {% else %}
+            <span>Complete</span>
+        {% endif %}
 
+        <a href="/">Update</a>
+        <a href="/">Delete</a>
+
+    {% endfor %}
 
 </body>
 </html>
