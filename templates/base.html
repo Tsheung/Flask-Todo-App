@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Todo App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
 </head>
 <body>
     <h1>Todo App</h1>
@@ -17,17 +19,19 @@
     </form>
 
     {% for todo in list_todo %}
-        <p>{{ todo.id }} | {{ todo.title }}</p>
+    <div class="ui segment">
+        <p class="ui big header">{{ todo.id }} | {{ todo.title }}</p>
     
         {% if todo.complete == False %}
             <span>Not Complete</span>
         {% else %}
             <span>Complete</span>
         {% endif %}
-
-        <a href="/update/{{ todo.id }}">Update</a>
-        <a href="/delete/{{ todo.id }}">Delete</a>
-
+        <br>
+        <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+        <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+    
+    </div>
     {% endfor %}
 
 </body>
