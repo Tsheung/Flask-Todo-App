@@ -15,5 +15,11 @@
             <button type="submit">Add</button>
         </div>
     </form>
+
+    {% for todo in list_to %}
+        <p>{{ todo.id }} | {{ todo.title }}</p>
+    {% endfor %}
+
+
 </body>
 </html>
